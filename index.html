@@ -1,27 +1,76 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mindvia Digital LTD builds and operates focused digital products, including Dumanless and upcoming in-house ventures.">
+  <title>Mindvia Digital LTD</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; }
+    .bg-aurora {
+      position: absolute;
+      inset: -25%;
+      background:
+        radial-gradient(60% 60% at 20% 20%, rgba(94, 234, 212, 0.16), transparent 55%),
+        radial-gradient(52% 52% at 80% 25%, rgba(129, 140, 248, 0.18), transparent 55%),
+        radial-gradient(60% 60% at 50% 80%, rgba(236, 72, 153, 0.14), transparent 60%);
+      background-size: 120% 120%;
+      filter: blur(60px);
+      opacity: 0.8;
+      animation: drift 26s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+      background-size: 140px 140px;
+      opacity: 0.35;
+      mask-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), transparent 70%);
+      pointer-events: none;
+    }
+    .fade-in { opacity: 0; animation: fadeIn 1.05s ease-out forwards 0.18s; }
+    .fade-stagger > * { opacity: 0; animation: fadeIn 0.9s ease-out forwards; }
+    .fade-stagger > *:nth-child(1) { animation-delay: 0.22s; }
+    .fade-stagger > *:nth-child(2) { animation-delay: 0.32s; }
+    .fade-stagger > *:nth-child(3) { animation-delay: 0.42s; }
+    .fade-stagger > *:nth-child(4) { animation-delay: 0.55s; }
+    @keyframes drift {
+      0% { transform: translate3d(0, 0, 0) scale(1); background-position: 0% 40%; }
+      50% { transform: translate3d(0, -10px, 0) scale(1.02); background-position: 60% 60%; }
+      100% { transform: translate3d(0, 0, 0) scale(1); background-position: 30% 20%; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
-<body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Mindvia Digital&lt;/title&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Mindvia Digital&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;We build and operate focused digital products.&lt;/p&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased overflow-hidden">
+  <div class="bg-aurora"></div>
+  <div class="bg-grid"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/80 to-slate-950"></div>
+
+  <main class="relative z-10 min-h-screen flex items-center justify-center px-6">
+    <div class="max-w-3xl w-full text-center fade-in">
+      <div class="mx-auto mb-10 h-px w-20 bg-gradient-to-r from-cyan-400/80 via-indigo-400/70 to-pink-400/70"></div>
+      <div class="fade-stagger space-y-6 md:space-y-8">
+        <p class="text-xs md:text-sm uppercase tracking-[0.38em] text-slate-400/80">Digital Holdings</p>
+        <h1 class="text-4xl md:text-6xl font-semibold tracking-tight text-white">Mindvia Digital</h1>
+        <p class="text-lg md:text-xl text-slate-200">We build and operate focused digital products.</p>
+        <p class="text-base md:text-lg text-slate-400">Holding company behind Dumanless and future in-house ventures.</p>
+        <div class="pt-2">
+          <a href="mailto:hello@mindvia.digital" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-slate-50 backdrop-blur transition duration-300 hover:border-white/30 hover:bg-white/10 hover:-translate-y-[1px]">
+            <span>hello@mindvia.digital</span>
+          </a>
+        </div>
+      </div>
+      <footer class="mt-14 text-xs text-slate-500">© Mindvia Digital LTD</footer>
+    </div>
+  </main>
 </body>
 </html>
