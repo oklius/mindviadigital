@@ -3,74 +3,534 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mindvia Digital LTD builds and operates focused digital products, including Dumanless and upcoming in-house ventures.">
-  <title>Mindvia Digital LTD</title>
+  <title>Mindvia Digital | Digital Holdings</title>
+  <meta name="description" content="Mindvia Digital LTD builds and operates focused digital products with a user-centric, innovative approach.">
+  <meta name="keywords" content="Mindvia Digital, digital holdings, Dumanless, product studio, London">
+  <meta property="og:title" content="Mindvia Digital | Digital Holdings">
+  <meta property="og:description" content="Mindvia Digital LTD builds and operates focused digital products with a user-centric, innovative approach.">
+  <meta property="og:url" content="https://mindvia.digital">
+  <meta property="og:image" content="https://dummyimage.com/1200x630/010A1C/ffffff&text=Mindvia+Digital">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mindvia Digital | Digital Holdings">
+  <meta name="twitter:description" content="Mindvia Digital LTD builds and operates focused digital products with a user-centric, innovative approach.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root { color-scheme: dark; }
-    body { margin: 0; }
+    :root {
+      color-scheme: dark;
+      --bg: #010A1C;
+      --accent-start: #7c3aed;
+      --accent-mid: #3b82f6;
+      --accent-end: #06b6d4;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .top-accent {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      z-index: 30;
+      background: linear-gradient(90deg, var(--accent-start), var(--accent-mid), var(--accent-end));
+      box-shadow: 0 0 18px rgba(91, 167, 255, 0.55);
+    }
     .bg-aurora {
-      position: absolute;
-      inset: -25%;
+      position: fixed;
+      inset: -30% -10% auto -10%;
+      height: 120%;
       background:
-        radial-gradient(60% 60% at 20% 20%, rgba(94, 234, 212, 0.16), transparent 55%),
-        radial-gradient(52% 52% at 80% 25%, rgba(129, 140, 248, 0.18), transparent 55%),
-        radial-gradient(60% 60% at 50% 80%, rgba(236, 72, 153, 0.14), transparent 60%);
-      background-size: 120% 120%;
-      filter: blur(60px);
-      opacity: 0.8;
-      animation: drift 26s ease-in-out infinite alternate;
+        radial-gradient(50% 40% at 15% 20%, rgba(124, 58, 237, 0.25), transparent 55%),
+        radial-gradient(45% 45% at 85% 30%, rgba(59, 130, 246, 0.28), transparent 60%),
+        radial-gradient(55% 55% at 50% 75%, rgba(6, 182, 212, 0.23), transparent 60%);
+      filter: blur(72px);
+      opacity: 0.9;
       pointer-events: none;
+      animation: drift 26s ease-in-out infinite alternate;
     }
     .bg-grid {
-      position: absolute;
+      position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
-      background-size: 140px 140px;
-      opacity: 0.35;
-      mask-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), transparent 70%);
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 160px 160px;
+      opacity: 0.25;
+      mask-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.7), transparent 70%);
       pointer-events: none;
     }
-    .fade-in { opacity: 0; animation: fadeIn 1.05s ease-out forwards 0.18s; }
-    .fade-stagger > * { opacity: 0; animation: fadeIn 0.9s ease-out forwards; }
-    .fade-stagger > *:nth-child(1) { animation-delay: 0.22s; }
-    .fade-stagger > *:nth-child(2) { animation-delay: 0.32s; }
-    .fade-stagger > *:nth-child(3) { animation-delay: 0.42s; }
-    .fade-stagger > *:nth-child(4) { animation-delay: 0.55s; }
-    @keyframes drift {
-      0% { transform: translate3d(0, 0, 0) scale(1); background-position: 0% 40%; }
-      50% { transform: translate3d(0, -10px, 0) scale(1.02); background-position: 60% 60%; }
-      100% { transform: translate3d(0, 0, 0) scale(1); background-position: 30% 20%; }
+    .glass {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), inset 0 0 0 0.6px rgba(255, 255, 255, 0.05);
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
+    .pill {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.16), rgba(59, 130, 246, 0.12));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav-link {
+      color: rgb(148 163 184);
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+    .nav-link:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-1px);
+    }
+    @keyframes drift {
+      0% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0, -12px, 0) scale(1.02); }
+      100% { transform: translate3d(0, 0, 0) scale(1); }
     }
   </style>
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100 antialiased overflow-hidden">
-  <div class="bg-aurora"></div>
-  <div class="bg-grid"></div>
-  <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/80 to-slate-950"></div>
+<body class="min-h-screen text-slate-100 antialiased">
+  <div class="top-accent" aria-hidden="true"></div>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
 
-  <main class="relative z-10 min-h-screen flex items-center justify-center px-6">
-    <div class="max-w-3xl w-full text-center fade-in">
-      <div class="mx-auto mb-10 h-px w-20 bg-gradient-to-r from-cyan-400/80 via-indigo-400/70 to-pink-400/70"></div>
-      <div class="fade-stagger space-y-6 md:space-y-8">
-        <p class="text-xs md:text-sm uppercase tracking-[0.38em] text-slate-400/80">Digital Holdings</p>
-        <h1 class="text-4xl md:text-6xl font-semibold tracking-tight text-white">Mindvia Digital</h1>
-        <p class="text-lg md:text-xl text-slate-200">We build and operate focused digital products.</p>
-        <p class="text-base md:text-lg text-slate-400">Holding company behind Dumanless and future in-house ventures.</p>
-        <div class="pt-2">
-          <a href="mailto:hello@mindvia.digital" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-slate-50 backdrop-blur transition duration-300 hover:border-white/30 hover:bg-white/10 hover:-translate-y-[1px]">
-            <span>hello@mindvia.digital</span>
+  <div class="relative overflow-hidden">
+    <header class="relative z-10">
+      <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-indigo-500 via-sky-400 to-cyan-300 flex items-center justify-center text-sm font-semibold text-white shadow-lg shadow-indigo-900/50">
+            MD
+          </div>
+          <div class="leading-tight">
+            <p class="text-[11px] uppercase tracking-[0.28em] text-slate-400">Digital Holdings</p>
+            <p class="font-semibold text-white text-lg" data-company-field="name">Mindvia Digital</p>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center gap-2 text-sm">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#ventures">Ventures</a>
+          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="#policies">Policies</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="relative z-10">
+      <section id="hero" class="pt-16 pb-20 sm:pb-28 lg:pt-20">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
+            <div class="space-y-6">
+              <p class="text-[11px] uppercase tracking-[0.35em] text-slate-400">Digital Holdings</p>
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">
+                Mindvia Digital
+              </h1>
+              <p class="text-lg sm:text-xl text-slate-200 max-w-2xl">
+                We build and operate focused digital products. Mindvia Digital is the holding company behind our current and future in-house ventures.
+              </p>
+              <div class="flex flex-wrap items-center gap-3">
+                <a href="#about" class="group inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 via-sky-500 to-cyan-400 shadow-lg shadow-indigo-900/40 transition-transform duration-200 hover:-translate-y-[2px]">
+                  Explore our story
+                  <span aria-hidden="true" class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/15">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 5v14m0 0l-5-5m5 5l5-5" />
+                    </svg>
+                  </span>
+                </a>
+                <a class="pill inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm text-slate-100 transition hover:-translate-y-[2px]" data-mailto>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-sky-300" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M5 7l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="font-medium">hello@mindvia.digital</span>
+                </a>
+              </div>
+              <div class="flex flex-wrap gap-3 text-sm text-slate-300">
+                <div class="pill inline-flex items-center gap-2 rounded-full px-4 py-2">
+                  <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                  <span>Incorporated in the United Kingdom</span>
+                </div>
+                <div class="pill inline-flex items-center gap-2 rounded-full px-4 py-2">
+                  <span class="h-2 w-2 rounded-full bg-sky-400"></span>
+                  <span>Focused, user-centric products</span>
+                </div>
+              </div>
+            </div>
+            <div class="glass rounded-3xl p-8 lg:p-10 backdrop-blur">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="text-sm uppercase tracking-[0.22em] text-slate-400 mb-2">Corporate Snapshot</p>
+                  <h2 class="text-2xl font-semibold text-white" data-company-field="name">Mindvia Digital LTD</h2>
+                  <p class="text-slate-300 mt-2">Building digital holdings with clarity, control, and credibility.</p>
+                </div>
+                <div class="rounded-full bg-white/10 border border-white/10 px-4 py-2 text-xs uppercase tracking-wide text-slate-200">
+                  Holdings
+                </div>
+              </div>
+              <div class="mt-6 space-y-3 text-sm text-slate-200">
+                <div class="flex items-center gap-3">
+                  <span class="h-2 w-2 rounded-full bg-indigo-400"></span>
+                  <span>Company No. <strong class="text-white" data-company-field="number">16947683</strong></span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+                  <span>Incorporated on <strong class="text-white" data-company-field="incorporation">07 January 2026</strong></span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                  <span data-company-field="address">71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="py-16 sm:py-20">
+        <div class="max-w-6xl mx-auto px-6 space-y-10">
+          <div class="max-w-3xl space-y-3">
+            <p class="text-sm uppercase tracking-[0.26em] text-slate-400">About Us</p>
+            <h2 class="text-3xl sm:text-4xl font-semibold text-white">Digital holdings with a focused, user-first mindset.</h2>
+            <p class="text-lg text-slate-200">
+              Mindvia Digital designs, builds, and operates focused digital products. We emphasize innovation, reliability, and user-centric experiences while stewarding in-house ventures from concept to market.
+            </p>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-2">
+            <div class="glass rounded-3xl p-7 sm:p-8 backdrop-blur space-y-5">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-white/10 border border-white/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="Innovation icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v4m0 10v4m7-7h-4m-6 0H5m10.364-5.364l-2.828 2.828m-2.828 2.828-2.828 2.828m0-10l2.828 2.828m2.828 2.828 2.828 2.828" />
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="text-xl font-semibold">Focused ventures</h3>
+                  <p class="text-slate-300">We operate a lean portfolio, concentrating on products that deliver clear value and long-term sustainability.</p>
+                </div>
+              </div>
+              <ul class="divide-y divide-white/5 text-sm">
+                <li class="flex items-start gap-3 py-3">
+                  <span class="sr-only">Company name</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-1 text-indigo-300" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 9h14M5 13h14M9 21V3m6 18V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="text-slate-200"><strong class="text-white">Company:</strong> <span data-company-field="name">Mindvia Digital LTD</span></span>
+                </li>
+                <li class="flex items-start gap-3 py-3">
+                  <span class="sr-only">Company number</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-1 text-indigo-300" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M4 11h16" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                  <span class="text-slate-200"><strong class="text-white">Company number:</strong> <span data-company-field="number">16947683</span></span>
+                </li>
+                <li class="flex items-start gap-3 py-3">
+                  <span class="sr-only">Incorporation date</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-1 text-indigo-300" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 4h10M7 9h10M5 7v12h14V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M9 15h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="text-slate-200"><strong class="text-white">Incorporated on:</strong> <span data-company-field="incorporation">07 January 2026</span></span>
+                </li>
+                <li class="flex items-start gap-3 py-3">
+                  <span class="sr-only">Registered address</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-1 text-indigo-300" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                  <span class="text-slate-200"><strong class="text-white">Registered office:</strong> <span data-company-field="address">71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</span></span>
+                </li>
+                <li class="flex items-start gap-3 py-3">
+                  <span class="sr-only">Contact email</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-1 text-indigo-300" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M5 7l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <a class="text-slate-200 underline underline-offset-4 decoration-indigo-400 hover:text-white" data-mailto>hello@mindvia.digital</a>
+                </li>
+              </ul>
+              <p class="text-sm text-slate-300">Mindvia Digital is the holding company behind current and future in-house ventures.</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-[1px]">
+              <div class="glass h-full rounded-[calc(1.5rem-1px)] p-7 sm:p-8 flex flex-col justify-between">
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <span class="h-8 w-8 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-400"></span>
+                    <div>
+                      <h3 class="text-xl font-semibold">Principles</h3>
+                      <p class="text-slate-300 text-sm">How we build and operate.</p>
+                    </div>
+                  </div>
+                  <ul class="space-y-3 text-slate-200 text-sm">
+                    <li class="flex gap-3">
+                      <span class="text-emerald-300">•</span>
+                      <span>User-centric design from discovery through launch.</span>
+                    </li>
+                    <li class="flex gap-3">
+                      <span class="text-emerald-300">•</span>
+                      <span>Lean experimentation balanced with operational rigor.</span>
+                    </li>
+                    <li class="flex gap-3">
+                      <span class="text-emerald-300">•</span>
+                      <span>Privacy-first mindset suitable for regulated contexts.</span>
+                    </li>
+                    <li class="flex gap-3">
+                      <span class="text-emerald-300">•</span>
+                      <span>Transparent corporate details for partner confidence.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-6">
+                  <div class="pill inline-flex items-center gap-2 rounded-2xl px-4 py-3 text-sm text-slate-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-sky-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    <span>Trusted by partners who value clarity.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ventures" class="py-16 sm:py-20">
+        <div class="max-w-6xl mx-auto px-6 space-y-8">
+          <div class="flex items-center justify-between gap-4 flex-wrap">
+            <div>
+              <p class="text-sm uppercase tracking-[0.26em] text-slate-400">Our Ventures</p>
+              <h2 class="text-3xl sm:text-4xl font-semibold text-white">Building and operating focused products.</h2>
+            </div>
+            <div class="pill inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-slate-100">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+              <span>Active portfolio</span>
+            </div>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-2">
+            <article class="glass rounded-3xl p-7 sm:p-8 backdrop-blur flex flex-col gap-6">
+              <div class="flex items-center gap-3">
+                <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-orange-500 via-rose-500 to-amber-400 flex items-center justify-center text-white font-semibold">D</div>
+                <div>
+                  <h3 class="text-2xl font-semibold text-white">Dumanless</h3>
+                  <p class="text-slate-300 text-sm">An innovative digital product designed to deliver a smoke-free experience.</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between gap-3 flex-wrap">
+                <div class="flex items-center gap-2 text-sm text-slate-300">
+                  <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                  <span>Built and operated by Mindvia Digital.</span>
+                </div>
+                <a href="https://dumanless.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium text-white bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 shadow-lg shadow-orange-900/40 transition-transform duration-200 hover:-translate-y-[2px]">
+                  Visit Dumanless
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M7 17L17 7m0 0H9m8 0v8" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="glass rounded-3xl p-7 sm:p-8 backdrop-blur flex flex-col justify-between gap-5">
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <div class="h-11 w-11 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-white font-semibold">+</div>
+                  <div>
+                    <h3 class="text-2xl font-semibold text-white">More ventures coming soon</h3>
+                    <p class="text-slate-300 text-sm">We are iterating on additional in-house projects aligned with our mission.</p>
+                  </div>
+                </div>
+                <p class="text-slate-300 text-sm">Stay tuned for new launches as we expand the portfolio with purpose-built digital products.</p>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-200">
+                <span class="h-2 w-2 rounded-full bg-sky-400"></span>
+                <span>Announcements will be shared here.</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-16 sm:py-20">
+        <div class="max-w-6xl mx-auto px-6 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div class="glass rounded-3xl p-7 sm:p-8 backdrop-blur">
+            <p class="text-sm uppercase tracking-[0.26em] text-slate-400">Contact & Corporate Details</p>
+            <h2 class="text-3xl font-semibold text-white mt-3">Get in touch with Mindvia Digital</h2>
+            <p class="text-slate-200 mt-4">We welcome partner inquiries, venture discussions, and product questions.</p>
+            <div class="mt-6 grid gap-3 text-sm text-slate-200">
+              <div class="flex items-start gap-3">
+                <span class="sr-only">Company name</span>
+                <div class="h-2 w-2 rounded-full bg-indigo-400 mt-2"></div>
+                <span><strong class="text-white">Company:</strong> <span data-company-field="name">Mindvia Digital LTD</span></span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="sr-only">Company number</span>
+                <div class="h-2 w-2 rounded-full bg-indigo-400 mt-2"></div>
+                <span><strong class="text-white">Company number:</strong> <span data-company-field="number">16947683</span></span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="sr-only">Incorporation date</span>
+                <div class="h-2 w-2 rounded-full bg-indigo-400 mt-2"></div>
+                <span><strong class="text-white">Incorporated on:</strong> <span data-company-field="incorporation">07 January 2026</span></span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="sr-only">Registered office</span>
+                <div class="h-2 w-2 rounded-full bg-indigo-400 mt-2"></div>
+                <span><strong class="text-white">Registered office:</strong> <span data-company-field="address">71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</span></span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="sr-only">Contact email</span>
+                <div class="h-2 w-2 rounded-full bg-indigo-400 mt-2"></div>
+                <span><strong class="text-white">Email:</strong> <a class="underline underline-offset-4 decoration-indigo-400 hover:text-white" data-mailto>hello@mindvia.digital</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-[1px]">
+            <div class="glass rounded-[calc(1.5rem-1px)] p-7 sm:p-8 backdrop-blur h-full">
+              <h3 class="text-xl font-semibold text-white">Send a note</h3>
+              <p class="text-sm text-slate-300 mt-2">Submitting will open your email client with the details pre-filled.</p>
+              <form id="contact-form" class="mt-6 space-y-4" method="POST" enctype="text/plain">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-slate-200">Name</label>
+                  <input id="name" name="name" type="text" required class="mt-2 w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-400/30">
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-slate-200">Email</label>
+                  <input id="email" name="email" type="email" required class="mt-2 w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-400/30">
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium text-slate-200">Message</label>
+                  <textarea id="message" name="message" rows="4" required class="mt-2 w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-400/30"></textarea>
+                </div>
+                <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-indigo-500 via-sky-500 to-cyan-400 shadow-lg shadow-indigo-900/40 transition-transform duration-200 hover:-translate-y-[2px]">
+                  Send via Email
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path d="M4 4l16 8-16 8 4-8-4-8z" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M12 12l-4 8" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </form>
+              <p class="text-xs text-slate-400 mt-3">We do not collect form submissions; your message is sent via your chosen email client.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="policies" class="py-14 sm:py-16">
+        <div class="max-w-6xl mx-auto px-6 space-y-6">
+          <div class="flex items-center justify-between gap-4 flex-wrap">
+            <div>
+              <p class="text-sm uppercase tracking-[0.26em] text-slate-400">Compliance</p>
+              <h2 class="text-2xl sm:text-3xl font-semibold text-white">Policies & terms</h2>
+            </div>
+            <div class="pill inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-slate-100">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+              <span>Placeholder content for review</span>
+            </div>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            <article id="privacy" class="glass rounded-3xl p-6 backdrop-blur space-y-3">
+              <div class="flex items-center gap-3">
+                <span class="h-9 w-9 rounded-2xl bg-white/10 border border-white/10 inline-flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-sky-300" viewBox="0 0 24 24" fill="none" aria-label="Privacy icon">
+                    <path d="M12 3l7 4v5c0 4-3 7.5-7 9-4-1.5-7-5-7-9V7l7-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M9.5 12.5L12 15l4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="text-xl font-semibold text-white">Privacy Policy</h3>
+                  <p class="text-slate-300 text-sm">Placeholder copy outlining our commitment to safeguarding user data and respecting privacy.</p>
+                </div>
+              </div>
+              <p class="text-sm text-slate-300">A full policy will be published as new ventures launch. For questions, email <a class="underline underline-offset-4 decoration-indigo-400 hover:text-white" data-mailto>hello@mindvia.digital</a>.</p>
+            </article>
+
+            <article id="terms" class="glass rounded-3xl p-6 backdrop-blur space-y-3">
+              <div class="flex items-center gap-3">
+                <span class="h-9 w-9 rounded-2xl bg-white/10 border border-white/10 inline-flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-sky-300" viewBox="0 0 24 24" fill="none" aria-label="Terms icon">
+                    <path d="M7 4h10v16H7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="text-xl font-semibold text-white">Terms of Service</h3>
+                  <p class="text-slate-300 text-sm">Placeholder terms suitable for partner review and future publication.</p>
+                </div>
+              </div>
+              <p class="text-sm text-slate-300">Finalized terms will accompany product releases. Reach us at <a class="underline underline-offset-4 decoration-indigo-400 hover:text-white" data-mailto>hello@mindvia.digital</a> for details.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative z-10 border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+        <div class="flex items-center gap-2">
+          <span>© <span id="current-year">2024</span> <span data-company-field="name">Mindvia Digital LTD</span></span>
+          <span class="text-slate-600">|</span>
+          <a href="#about" class="hover:text-white">About</a>
+          <a href="#ventures" class="hover:text-white">Ventures</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="h-9 w-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-200 hover:text-white hover:border-white/30" aria-label="LinkedIn (placeholder)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6.94 9.5V18h-3V9.5h3zM5.44 5a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10.44 9.5h2.88v1.17h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V18h-3v-3.7c0-.88-.02-2-1.22-2-1.22 0-1.4.95-1.4 1.93V18h-3V9.5z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="h-9 w-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-200 hover:text-white hover:border-white/30" aria-label="Twitter (placeholder)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M21 6.2a6.3 6.3 0 01-1.8.5 3.15 3.15 0 001.4-1.7 6.28 6.28 0 01-2 .8 3.14 3.14 0 00-5.4 2.15c0 .25.03.5.08.73A8.92 8.92 0 014 5.5a3.14 3.14 0 00.97 4.19 3.1 3.1 0 01-1.42-.4v.04a3.14 3.14 0 002.52 3.08 3.16 3.16 0 01-1.41.05 3.15 3.15 0 002.93 2.18A6.3 6.3 0 013 16.4 8.9 8.9 0 007.29 18c5.88 0 9.1-4.87 9.1-9.1 0-.14 0-.29-.01-.43A6.5 6.5 0 0021 6.2z"/>
+            </svg>
           </a>
         </div>
       </div>
-      <footer class="mt-14 text-xs text-slate-500">© Mindvia Digital LTD</footer>
-    </div>
-  </main>
+    </footer>
+  </div>
+
+  <script>
+    const company = {
+      name: 'Mindvia Digital LTD',
+      number: '16947683',
+      incorporation: '07 January 2026',
+      address: '71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.',
+      email: 'hello@mindvia.digital',
+      url: 'https://mindvia.digital'
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const fields = document.querySelectorAll('[data-company-field]');
+      fields.forEach((el) => {
+        const key = el.getAttribute('data-company-field');
+        if (key && company[key]) {
+          el.textContent = company[key];
+          if (el.tagName.toLowerCase() === 'a' && key === 'email') {
+            el.setAttribute('href', `mailto:${company.email}`);
+          }
+        }
+      });
+
+      const mailtoLinks = document.querySelectorAll('[data-mailto]');
+      mailtoLinks.forEach((el) => {
+        el.setAttribute('href', `mailto:${company.email}`);
+        el.textContent = company.email;
+      });
+
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.setAttribute('action', `mailto:${company.email}`);
+      }
+
+      const year = document.getElementById('current-year');
+      if (year) {
+        year.textContent = new Date().getFullYear().toString();
+      }
+    });
+  </script>
 </body>
 </html>
