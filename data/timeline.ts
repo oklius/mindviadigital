@@ -9,6 +9,6 @@ export const milestones = [
   },
   {
     date: "2026",
-    description: "Puppy Trainer prototype in development while new B2B software ideas are being researched."
+    description: "Pupwell prototype in development while new B2B software ideas are being researched."
   }
 ];

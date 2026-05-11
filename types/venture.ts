@@ -7,6 +7,7 @@ export interface Venture {
   status: VentureStatus;
   icon: string;
   image?: string;
+  imageAlt?: string;
   link?: string;
   longDescription: string;
 }

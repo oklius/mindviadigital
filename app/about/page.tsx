@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { AnimatedSection } from "@/components/animated-section";
 import { Timeline } from "@/components/timeline";
 import { milestones } from "@/data/timeline";
@@ -11,15 +12,26 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="space-y-20 pb-20 pt-16 sm:pt-24">
-      <AnimatedSection className="max-w-4xl space-y-5">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-300">About</p>
-        <h1 className="font-display text-4xl font-semibold text-secondary-900 sm:text-6xl dark:text-white">
-          A digital venture lab means we build our own bets.
-        </h1>
-        <p className="text-lg leading-8 text-neutral-600 dark:text-neutral-300">
-          Mindvia Digital sits somewhere between a tiny holding company and an incubator. We start with a problem, ship a
-          small product, listen carefully, and decide whether the idea deserves more attention.
-        </p>
+      <AnimatedSection className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="max-w-4xl space-y-5">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-300">About</p>
+          <h1 className="font-display text-4xl font-semibold text-secondary-900 sm:text-6xl dark:text-white">
+            A digital venture lab means we build our own bets.
+          </h1>
+          <p className="text-lg leading-8 text-neutral-600 dark:text-neutral-300">
+            Mindvia Digital sits somewhere between a tiny holding company and an incubator. We start with a problem, ship a
+            small product, listen carefully, and decide whether the idea deserves more attention.
+          </p>
+        </div>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-neutral-200 bg-white p-6 shadow-soft dark:border-neutral-800 dark:bg-secondary-800">
+          <Image
+            src="/assets/about-team-goals.svg"
+            alt="A team aligning around product goals"
+            fill
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="object-contain p-6"
+          />
+        </div>
       </AnimatedSection>
 
       <AnimatedSection className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, Mail, Rocket, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Mail, Sparkles } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 import { VentureCard } from "@/components/venture-card";
 import { ventures } from "@/data/ventures";
@@ -41,16 +42,24 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="grid gap-4" aria-label="Mindvia operating rhythm">
-          {["Experiment", "Build", "Learn", "Repeat"].map((word, index) => (
-            <div
-              key={word}
-              className="flex items-center justify-between rounded-lg border border-neutral-200 bg-white px-5 py-4 text-secondary-900 shadow-soft dark:border-neutral-800 dark:bg-secondary-800 dark:text-white"
-            >
-              <span className="font-display text-2xl font-semibold">{word}</span>
-              <span className="text-sm font-medium text-neutral-500 dark:text-neutral-400">0{index + 1}</span>
-            </div>
-          ))}
+        <div className="space-y-5">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-neutral-200 bg-white p-6 shadow-soft dark:border-neutral-800 dark:bg-secondary-800">
+            <Image
+              src="/assets/hero-build.svg"
+              alt="A team building a website interface"
+              fill
+              priority
+              sizes="(min-width: 1024px) 44vw, 100vw"
+              className="object-contain p-6"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-3 text-sm font-semibold text-neutral-600 dark:text-neutral-300">
+            {["Experiment", "Build", "Learn", "Repeat"].map((word) => (
+              <div key={word} className="rounded-lg border border-neutral-200 bg-white px-4 py-3 dark:border-neutral-800 dark:bg-secondary-800">
+                {word}
+              </div>
+            ))}
+          </div>
         </div>
       </AnimatedSection>
 
@@ -78,8 +87,14 @@ export default function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="flex min-h-72 items-center justify-center rounded-lg border border-neutral-200 bg-white shadow-soft dark:border-neutral-800 dark:bg-secondary-800">
-          <Rocket aria-hidden="true" className="h-28 w-28 text-primary-500" strokeWidth={1.4} />
+        <div className="relative min-h-72 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-soft dark:border-neutral-800 dark:bg-secondary-800">
+          <Image
+            src="/assets/founder-team.svg"
+            alt="A small team celebrating progress"
+            fill
+            sizes="(min-width: 1024px) 42vw, 100vw"
+            className="object-contain p-8"
+          />
         </div>
         <div className="space-y-5">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-300">Founder note</p>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { StatusBadge } from "@/components/ui/status-badge";
@@ -49,8 +50,18 @@ export default function VentureDetailPage({ params }: VentureDetailPageProps) {
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <aside className="rounded-lg border border-neutral-200 bg-white p-6 shadow-soft dark:border-neutral-800 dark:bg-secondary-800">
-          <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-primary-50 font-display text-2xl font-semibold text-primary-600 ring-1 ring-primary-100 dark:bg-primary-500/15 dark:text-primary-300 dark:ring-primary-500/20">
-            {venture.icon}
+          <div className="relative flex h-28 w-full items-center justify-center rounded-lg bg-primary-50 p-4 ring-1 ring-primary-100 dark:bg-white dark:ring-primary-500/20">
+            {venture.image ? (
+              <Image
+                src={venture.image}
+                alt={venture.imageAlt ?? `${venture.name} visual`}
+                fill
+                sizes="(min-width: 1024px) 320px, 100vw"
+                className="object-contain p-4"
+              />
+            ) : (
+              <span className="font-display text-2xl font-semibold text-primary-600 dark:text-primary-300">{venture.icon}</span>
+            )}
           </div>
           <div className="mt-6">
             <StatusBadge status={venture.status} />

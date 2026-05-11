@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Venture } from "@/types/venture";
@@ -12,8 +13,6 @@ interface VentureCardProps {
 }
 
 export function VentureCard({ venture, index = 0 }: VentureCardProps) {
-  const href = venture.link ?? `/ventures/${venture.slug}`;
-
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -25,8 +24,18 @@ export function VentureCard({ venture, index = 0 }: VentureCardProps) {
     >
       <div className="space-y-5">
         <div className="flex items-start justify-between gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 font-display text-lg font-semibold text-primary-600 ring-1 ring-primary-100 dark:bg-primary-500/15 dark:text-primary-300 dark:ring-primary-500/20">
-            {venture.icon}
+          <div className="relative flex h-24 w-28 items-center justify-center rounded-lg bg-primary-50 p-3 ring-1 ring-primary-100 dark:bg-white dark:ring-primary-500/20">
+            {venture.image ? (
+              <Image
+                src={venture.image}
+                alt={venture.imageAlt ?? `${venture.name} visual`}
+                fill
+                sizes="112px"
+                className="object-contain p-3"
+              />
+            ) : (
+              <span className="font-display text-lg font-semibold text-primary-600 dark:text-primary-300">{venture.icon}</span>
+            )}
           </div>
           <StatusBadge status={venture.status} />
         </div>
@@ -38,7 +47,7 @@ export function VentureCard({ venture, index = 0 }: VentureCardProps) {
       </div>
 
       <Link
-        href={href}
+        href={`/ventures/${venture.slug}`}
         className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary-600 transition group-hover:gap-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-4 dark:text-primary-300 dark:focus:ring-offset-secondary-800"
       >
         Learn more
